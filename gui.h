@@ -61,6 +61,8 @@ private slots:
 
     void on_actionHelp_triggered();
 
+    void on_actionChange_Log_triggered();
+
 private:
     void initGui();
     void initSettings();

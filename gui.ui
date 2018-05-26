@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>850</width>
-    <height>440</height>
+    <width>1096</width>
+    <height>481</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -246,6 +246,12 @@
             <property name="text">
              <string>Tiling:</string>
             </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+            <property name="indent">
+             <number>8</number>
+            </property>
            </widget>
           </item>
           <item row="2" column="0">
@@ -264,6 +270,9 @@
             </property>
             <property name="text">
              <string>Alpha Hint:</string>
+            </property>
+            <property name="indent">
+             <number>8</number>
             </property>
            </widget>
           </item>
@@ -297,15 +306,8 @@
             </item>
            </widget>
           </item>
-          <item row="6" column="3">
-           <widget class="QCheckBox" name="checkBox_Normal_Enabled">
-            <property name="text">
-             <string>Enabled</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="0">
-           <widget class="QLabel" name="label_Normal">
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_alpha">
             <property name="minimumSize">
              <size>
               <width>120</width>
@@ -315,75 +317,16 @@
             <property name="maximumSize">
              <size>
               <width>120</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Normal Map:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="7" column="0" colspan="5">
-           <widget class="QPlainTextEdit" name="plainTxt_Normal">
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>23</height>
-             </size>
-            </property>
-            <property name="inputMethodHints">
-             <set>Qt::ImhNone</set>
-            </property>
-            <property name="verticalScrollBarPolicy">
-             <enum>Qt::ScrollBarAlwaysOff</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="4" colspan="2">
-           <widget class="QCheckBox" name="checkBox_Flip_Green">
-            <property name="text">
-             <string>Normal Map Flip Green Channel</string>
-            </property>
-           </widget>
-          </item>
-          <item row="7" column="5">
-           <widget class="QPushButton" name="btn_File_Explorer_Normal">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>22</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Open</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="1" colspan="2">
-           <spacer name="horizontalSpacer_6">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
               <height>20</height>
              </size>
             </property>
-           </spacer>
-          </item>
-          <item row="0" column="1">
-           <spacer name="horizontalSpacer_7">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+            <property name="text">
+             <string>Alpha</string>
             </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
+            <property name="indent">
+             <number>8</number>
             </property>
-           </spacer>
+           </widget>
           </item>
           <item row="2" column="1">
            <spacer name="horizontalSpacer_8">
@@ -428,30 +371,89 @@
             </item>
            </widget>
           </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_alpha">
-            <property name="minimumSize">
-             <size>
-              <width>120</width>
-              <height>0</height>
-             </size>
+          <item row="0" column="1">
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
             </property>
-            <property name="maximumSize">
+            <property name="sizeHint" stdset="0">
              <size>
-              <width>120</width>
+              <width>40</width>
               <height>20</height>
              </size>
             </property>
-            <property name="text">
-             <string>Alpha</string>
-            </property>
-           </widget>
+           </spacer>
           </item>
           <item row="1" column="3">
            <widget class="QCheckBox" name="checkBox_Alpha">
             <property name="text">
              <string>Enabled</string>
             </property>
+           </widget>
+          </item>
+          <item row="8" column="0" colspan="6">
+           <widget class="QGroupBox" name="gridGroupBox">
+            <property name="title">
+             <string>Normal Maps</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_7">
+             <item row="1" column="4">
+              <widget class="QCheckBox" name="checkBox_Flip_Green">
+               <property name="text">
+                <string>Normal Map Flip Green Channel</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="6">
+              <widget class="QPushButton" name="btn_File_Explorer_Normal">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>22</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Open</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0" colspan="6">
+              <widget class="QPlainTextEdit" name="plainTxt_Normal">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>23</height>
+                </size>
+               </property>
+               <property name="inputMethodHints">
+                <set>Qt::ImhNone</set>
+               </property>
+               <property name="verticalScrollBarPolicy">
+                <enum>Qt::ScrollBarAlwaysOff</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="4">
+              <widget class="QCheckBox" name="checkBox_Normal_Enabled">
+               <property name="text">
+                <string>Enabled</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="5">
+              <spacer name="horizontalSpacer_6">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>
@@ -535,7 +537,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>850</width>
+     <width>1096</width>
      <height>21</height>
     </rect>
    </property>
@@ -555,6 +557,7 @@
     <addaction name="separator"/>
     <addaction name="actionTerms_Agreements"/>
     <addaction name="actionAbout"/>
+    <addaction name="actionChange_Log"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuHelp"/>
@@ -583,6 +586,11 @@
   <action name="actionTerms_Agreements">
    <property name="text">
     <string>&amp;Terms  Agreements</string>
+   </property>
+  </action>
+  <action name="actionChange_Log">
+   <property name="text">
+    <string>Change Log</string>
    </property>
   </action>
  </widget>

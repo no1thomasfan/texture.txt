@@ -4,5 +4,6 @@
     </qresource>
     <qresource prefix="/">
         <file>image.png</file>
+        <file>documents/license/gpl3.txt</file>
     </qresource>
 </RCC>

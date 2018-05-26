@@ -1,0 +1,11 @@
+05/25/2018	Version 2.0.5
+Bug Fixes:
+	1. Fixed case where generating a .txt file on a non-existant file would crash the application.
+
+Enhancements:
+	1. Quality of life improvements -- Minor gui changes to make the normal mapping option set slightly more clear. 
+		a. In the settings pane, the dedicated save button has been removed. Clicking okay now saves the changes automatically. Cancel will abort the changes. 
+	2. Updated help link -- Now takes you to the github repository. With the loss of the forum, help will be provided on the github and eventually a new guide will be posted as well.
+	3. Added change log -- Available in the application directory or, from within the application (will launch system text editor).
+	4. Minor code improvements -- Check the github for a diff of the code
+	5. Added comments for code. -- Check the github for a diff of the code

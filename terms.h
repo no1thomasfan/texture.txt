@@ -2,6 +2,7 @@
 #define TERMS_H
 
 #include "gui.h"
+#include "settings.h"
 #include <QDialog>
 #include <QCloseEvent>
 
@@ -22,6 +23,8 @@ private slots:
 
 private:
     Ui::Terms *ui;
+    Settings *mySet;
+    void loadLicenseFile();
 };
 
 #endif // TERMS_H

@@ -213,6 +213,11 @@ void Gui::gen_File()
         //Open initial file to get required information
         QFile original(filepath);
         QFileInfo file_Name(original);
+        if(!(file_Name.exists()) || !file_Name.isFile())
+        {
+            ui->console->append(QTime::currentTime().toString() + ":  " + "No file selected. Doing nothing");
+            return;
+        }
 
         //Get the file name and file path
         QString fileimage(file_Name.fileName());
@@ -318,10 +323,8 @@ void Gui::gen_File()
                 }
             }
 
-
             //Close The file
             file.close();
-
 
             //Write to the console that the file was created.
             ui->console->append(QTime::currentTime().toString() + ":  " + "Created: " + outfile);
@@ -406,6 +409,13 @@ void Gui::on_actionAbout_triggered()
 
 void Gui::on_actionHelp_triggered()
 {
-    QString link = "http://si3d.proboards.com/post/121466/thread";
+    //QString link = "http://si3d.proboards.com/post/121466/thread";
+    QString link = "https://github.com/no1thomasfan/texture.txt";
+    QDesktopServices::openUrl(QUrl(link));
+}
+
+void Gui::on_actionChange_Log_triggered()
+{
+    QString link = qApp->applicationDirPath() + "/documents/changelog/latest.txt";
     QDesktopServices::openUrl(QUrl(link));
 }
