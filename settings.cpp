@@ -3,18 +3,33 @@
 #include <QSettings>
 #include <QStandardPaths>
 #include <QFileDialog>
-//#include <QDebug>
+#include <QDebug>
 
 Settings::Settings(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Settings)
 {
-    //Set the path to our settings.ini file
-    settingsFile = QApplication::applicationDirPath() + "/settings.ini";
+    //Path to our writable settings directory
+    QDir path=QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+
+    //Check that path exists
+    if(!path.exists())
+    {
+        //If not, make it.
+        path.mkpath(path.absolutePath());
+    }
+
+    //Settings path
+    QString temp = QDir::toNativeSeparators(path.absolutePath().append("/settings.ini"));
+    qDebug().noquote()<<"Settings Location:\t" + temp;
+
+    //Update the global with the path we made.
+    settingsFile = temp;
 
     //Load up our new settings prior to the gui
     loadSettings();
 
+    //Setup the gui
     ui->setupUi(this);
 
     //Once the gui is created set the path text to be the user's saved path
@@ -48,6 +63,7 @@ void Settings::saveSettings()
     //Write the respective settings
     defaultDirectory = ui->textEdit_DefDir->toPlainText();
     settings.setValue("Trainz-Editing-Directory", defaultDirectory);
+    settings.setValue("Terms-Accepted", terms);
 
     //Sync the changes to formally write them.
     settings.sync();

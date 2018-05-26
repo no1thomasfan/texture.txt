@@ -4,6 +4,7 @@
 #
 #-------------------------------------------------
 
+
 QT       += core gui
 
 win32:RC_ICONS += icon.ico
@@ -41,7 +42,3 @@ FORMS    += gui.ui \
 
 RESOURCES += \
     resources.qrc
-
-
-
-
